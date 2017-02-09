@@ -11,6 +11,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d
 
 
 CUBE_DOM_GW_EXTRA_INSTALL ?= ""
+CUBE_DOM_GW_EXTRA_UNINSTALL ?= ""
 
 IMAGE_FEATURES += "package-management doc-pkgs"
 IMAGE_FSTYPES = "tar.bz2"
@@ -55,6 +56,7 @@ IMAGE_INSTALL += "umbim"
 
 # Extras as defined externally
 IMAGE_INSTALL += "${CUBE_DOM_GW_EXTRA_INSTALL}"
+IMAGE_INSTALL_remove += "${CUBE_DOM_GW_EXTRA_UNINSTALL}"
 
 inherit core-image
 inherit builder-base
